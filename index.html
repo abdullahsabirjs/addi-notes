@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Notes App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>🗒️ Addi Notes App</h1>
+    <input id="searchInput" type="search" placeholder="Search notes..." aria-label="Search notes" />
+    <button id="toggleDark">🌙 Dark Mode</button>
+  </header>
+
+  <main class="container">
+    <div class="toolbar">
+      <button id="createBtn">Create Note</button>
+    </div>
+
+    <!-- Notes list -->
+    <section id="notesList" class="notes-grid" aria-live="polite"></section>
+  </main>
+
+  <!-- Editor (opens on Create/Edit) -->
+  <div id="editorOverlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+    <div class="editor">
+      <div class="editor-head">
+        <h2 id="formTitle">Create Note</h2>
+        <button id="closeEditor" class="icon-btn" aria-label="Close editor">✕</button>
+      </div>
+
+      <label>
+        <span>Title</span>
+        <input id="titleInput" type="text" placeholder="Note title..." />
+      </label>
+
+      <label>
+        <span>Note</span>
+        <textarea id="bodyInput" rows="7" placeholder="Write your note..."></textarea>
+      </label>
+
+      <div class="editor-actions">
+        <button id="saveBtn">Save</button>
+        <button id="cancelBtn" class="secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <small>© <span id="year"></span> Addi Notes App • Built with HTML, CSS & JS</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
